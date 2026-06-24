@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void merge(int arr[], int left, int mid, int right)
-{
+void merge(int arr[], int left, int mid, int right){
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
@@ -60,13 +59,17 @@ void mergeSort(int arr[], int left, int right)
     if(left < right)
     {
         int mid = (left + right) / 2;
+
         mergeSort(arr, left, mid);
+
         mergeSort(arr, mid + 1, right);
+
         merge(arr, left, mid, right);
     }
 }
 
 int main(){
+    // Data array
     int data[] = {4, 7, 3, 2, 9, 5, 11};
     int n = sizeof(data) / sizeof(data[0]);
     cout << "Data Sebelum Sorting : ";
